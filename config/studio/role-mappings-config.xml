@@ -57,6 +57,9 @@
         <group name="site_developer">
             <role>developer</role>
         </group>
+        <group name="Dev-WTC">
+            <role>developer</role>
+        </group>
         <group name="site_author">
             <role>author</role>
         </group>
