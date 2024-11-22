@@ -63,6 +63,9 @@
         <group name="adev">
             <role>developer</role>
         </group>
+        <group name="cDev">
+            <role>developer</role>
+        </group>
         <group name="Dev-WTC">
             <role>developer</role>
         </group>
