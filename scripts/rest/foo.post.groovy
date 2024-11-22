@@ -1,4 +1,4 @@
-@Grab(group='commons-fileupload', module='commons-fileupload', version='1.5')
+@Grab(group='org.apache.commons', module='commons-fileupload2-jakarta-servlet6', version='2.0.0-M2')
 
 import org.apache.commons.fileupload2.jakarta.servlet6.JakartaServletFileUpload
 import org.apache.commons.fileupload.util.Streams
