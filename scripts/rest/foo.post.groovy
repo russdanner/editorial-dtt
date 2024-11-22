@@ -28,9 +28,8 @@ if (JakartaServletFileUpload.isMultipartContent(request)) {
         }
         else {
             def contenttype = item.getContentType()
-            name = FilenameUtils.getName(fileName)
-            println "File : $name ($contenttype) ->" + stream.available()
-        }
+            name = FilenameUtils.getName(name)
+            println "File : $name ($contenttype) ->"
     }
 }
 else {
