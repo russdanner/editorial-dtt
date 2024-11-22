@@ -35,3 +35,5 @@ if (JakartaServletFileUpload.isMultipartContent(request)) {
 else {
     // throw an error
 }
+
+return result
