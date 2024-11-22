@@ -7,7 +7,7 @@ def parts = request.getParts()
 // parts[key] = value
 // }
 
-println "List Parts:"
+println "List Parts:"+request.class
 parts.each { part ->
    println " - Part: "+part.getName()
 }
