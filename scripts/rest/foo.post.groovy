@@ -4,16 +4,7 @@ import org.apache.commons.fileupload2.jakarta.servlet6.JakartaServletFileUpload
 import org.apache.commons.fileupload.util.Streams
 import org.apache.commons.io.FilenameUtils
 
-// import org.apache.commons.lang3.StringUtils
-// import org.craftercms.commons.security.exception.PermissionException
-// import org.craftercms.engine.exception.HttpStatusCodeException
-// import org.craftercms.studio.api.v1.exception.ServiceLayerException
-// import org.craftercms.studio.api.v2.exception.content.ContentExistException
-// import scripts.api.ContentServices
-
 def result = [:]
-
-//def context = ContentServices.createContext(applicationContext, request)
 
 if (JakartaServletFileUpload.isMultipartContent(request)) {
     def upload = new JakartaServletFileUpload()
@@ -31,7 +22,7 @@ if (JakartaServletFileUpload.isMultipartContent(request)) {
 
             name = FilenameUtils.getName(name)
 
-            println "File : $name ($contenttype)"
+            println "File : $name ($contenttype) -> "+stream.available+" bytes"
         }
     }
 }
