@@ -1,23 +1,37 @@
-println "========================================================================================================================================"
+import org.apache.commons.fileupload2.jakarta.servlet6.JakartaServletFileUpload
+import org.apache.commons.fileupload.util.Streams
 
-def parts = request.getParts()
+// import org.apache.commons.io.FilenameUtils
+// import org.apache.commons.lang3.StringUtils
+// import org.craftercms.commons.security.exception.PermissionException
+// import org.craftercms.engine.exception.HttpStatusCodeException
+// import org.craftercms.studio.api.v1.exception.ServiceLayerException
+// import org.craftercms.studio.api.v2.exception.content.ContentExistException
+// import scripts.api.ContentServices
 
-// reader.text.split('&').each { param ->
-// def (key, value) = param.split('=').collect { URLDecoder.decode(it, 'UTF-8') }
-// parts[key] = value
-// }
+def result = [:]
+def fileName = ""
+def contentType = ""
 
-println "List Parts:"+request.class
-parts.each { part ->
-   println " - Part: "+part.getName()
+//def context = ContentServices.createContext(applicationContext, request)
+
+if (JakartaServletFileUpload.isMultipartContent(request)) {
+    def upload = new JakartaServletFileUpload()
+    def iterator = upload.getItemIterator(request)
+    while(iterator.hasNext()) {
+        def item = iterator.next()
+        def name = item.getFieldName()
+        def stream = item.getInputStream()
+        
+        if(item.isFormField()) {
+            println "Field : $name -> "+ Streams.asString(stream)
+        }
+        else {
+            def contentType = item.getContentType()
+            println "File : $name ->" + stream.size()
+        }
+    }
 }
-// Access individual fields
-//parts.each { key, value ->
-//println "parts: ${key}: ${value}"
-//}
-
-println ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
-
-params.each { key, value ->
-println "param: ${key}: ${value}"
+else {
+    // throw an error
 }
