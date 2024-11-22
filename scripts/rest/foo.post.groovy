@@ -7,7 +7,9 @@ def parts = request.getParts()
 // parts[key] = value
 // }
 
-println ""+parts
+parts.each { part ->
+   println "Part: "+part.getName()
+}
 // Access individual fields
 //parts.each { key, value ->
 //println "parts: ${key}: ${value}"
