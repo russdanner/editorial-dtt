@@ -2,8 +2,8 @@
 
 import org.apache.commons.fileupload2.jakarta.servlet6.JakartaServletFileUpload
 import org.apache.commons.fileupload.util.Streams
+import org.apache.commons.io.FilenameUtils
 
-// import org.apache.commons.io.FilenameUtils
 // import org.apache.commons.lang3.StringUtils
 // import org.craftercms.commons.security.exception.PermissionException
 // import org.craftercms.engine.exception.HttpStatusCodeException
@@ -27,8 +27,9 @@ if (JakartaServletFileUpload.isMultipartContent(request)) {
             println "Field : $name -> "+ Streams.asString(stream)
         }
         else {
-            def contentType = item.getContentType()
-            println "File : $name ->" + stream.available()
+            def contenttype = item.getContentType()
+            name = FilenameUtils.getName(fileName)
+            println "File : $name ($contenttype) ->" + stream.available()
         }
     }
 }
