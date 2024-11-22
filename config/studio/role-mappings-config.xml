@@ -57,6 +57,9 @@
         <group name="site_developer">
             <role>developer</role>
         </group>
+        <group name="b-dev">
+            <role>developer</role>
+        </group>
         <group name="adev">
             <role>developer</role>
         </group>
