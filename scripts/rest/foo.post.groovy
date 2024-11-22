@@ -12,8 +12,6 @@ import org.apache.commons.fileupload.util.Streams
 // import scripts.api.ContentServices
 
 def result = [:]
-def fileName = ""
-def contentType = ""
 
 //def context = ContentServices.createContext(applicationContext, request)
 
