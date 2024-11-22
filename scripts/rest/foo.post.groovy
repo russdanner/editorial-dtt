@@ -22,7 +22,7 @@ if (JakartaServletFileUpload.isMultipartContent(request)) {
 
             name = FilenameUtils.getName(name)
 
-            println "File : $name ($contenttype) -> "+stream.available+" bytes"
+            println "File : $name ($contenttype) -> " + stream.available() +" bytes"
         }
     }
 }
