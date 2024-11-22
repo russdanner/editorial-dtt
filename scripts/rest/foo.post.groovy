@@ -1,4 +1,6 @@
 def parts = [:]
+println "========================================================================================================================================"
+
 request.reader.text.split('&').each { param ->
 def (key, value) = param.split('=').collect { URLDecoder.decode(it, 'UTF-8') }
 parts[key] = value
