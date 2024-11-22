@@ -9,6 +9,7 @@ parts[key] = value
 parts.each { key, value ->
 println "parts: ${key}: ${value}"
 }
+println ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
 
 params.each { key, value ->
 println "param: ${key}: ${value}"
